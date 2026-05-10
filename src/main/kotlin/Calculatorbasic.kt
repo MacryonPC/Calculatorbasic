@@ -1,7 +1,7 @@
 package org.example
 
 class Calculatorbasic(): CalculatorMetod {
-
+    private val history = mutableListOf<String>()
 
    val checkfalse = false
 
@@ -29,26 +29,33 @@ class Calculatorbasic(): CalculatorMetod {
                     val inputNumbers1 = readln().toFloat()
                     val inputNumbers2 = readln().toFloat()
                     val resultAnswer1 = (inputNumbers1 + inputNumbers2).toInt()
+                    saveToHistory("$inputNumbers1 + $inputNumbers2 = $resultAnswer1")
                     "Ответ: $resultAnswer1"}
                 2 -> {
                     println("Введите числа")
                     val inputNumbers1 = readln().toFloat()
                     val inputNumbers2 = readln().toFloat()
                     val resultAnswer2 = (inputNumbers1 - inputNumbers2).toInt()
+                    saveToHistory("$inputNumbers1 - $inputNumbers2 = $resultAnswer2")
                     "Ответ: $resultAnswer2"}
                 3 -> {
                     println("Введите числа")
                     val inputNumbers1 = readln().toFloat()
                     val inputNumbers2 = readln().toFloat()
                     val resultAnswer3 = (inputNumbers1 * inputNumbers2).toInt()
+                    saveToHistory("$inputNumbers1 * $inputNumbers2 = $resultAnswer3")
                     "Ответ: $resultAnswer3"}
                 4 -> {
                     println("Введите числа")
                     val inputNumbers1 = readln().toDouble()
                     val inputNumbers2 = readln().toDouble()
                     val resultAnswer4 = divisionToZero(inputNumbers1, inputNumbers2)
+                    saveToHistory("$inputNumbers1 / $inputNumbers2 = $resultAnswer4")
                     "Ответ: $resultAnswer4"}
-                5 -> {"пока в разработке!!!"}
+                5 -> {
+                    showHistory()
+
+                    ""}
                 6 -> {break}
                 else -> {"Не существующие значение" }
             }
@@ -60,6 +67,17 @@ class Calculatorbasic(): CalculatorMetod {
     }
 
 
+    override fun saveToHistory(express: String) {
+            history.add(express)
+    }
+
+    override fun showHistory() {
+        if ( history.isEmpty() ) {
+            println("История пуста!")
+        }else {
+            history.forEach { println(it) }
+        }
+    }
 
     override fun divisionToZero(a: Double, b: Double): String{
        return if (b == 0.0 || a == 0.0 )  "Делить на ноль нельзя!" else  "${a / b}"
@@ -73,4 +91,4 @@ class Calculatorbasic(): CalculatorMetod {
 
 
 }
-const val versionCalculator = "V.0.0.0.9"
+const val versionCalculator = "V.0.0.0.10"
