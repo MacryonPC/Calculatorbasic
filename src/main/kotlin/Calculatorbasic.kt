@@ -1,6 +1,6 @@
 package org.example
 
-class Calculatorbasic(): Calculator_metod {
+class Calculatorbasic(): CalculatorMetod {
 
 
    val checkfalse = false
@@ -44,9 +44,10 @@ class Calculatorbasic(): Calculator_metod {
                     "Ответ: $resultAnswer3"}
                 4 -> {
                     println("Введите числа")
-                    val inputNumbers1 = readln().toFloat()
-                    val inputNumbers2 = readln().toFloat()
-                    "Ответ: ${(inputNumbers1 / inputNumbers2)}"}
+                    val inputNumbers1 = readln().toDouble()
+                    val inputNumbers2 = readln().toDouble()
+                    val resultAnswer4 = divisionToZero(inputNumbers1, inputNumbers2)
+                    "Ответ: $resultAnswer4"}
                 5 -> {"пока в разработке!!!"}
                 6 -> {break}
                 else -> {"Не существующие значение" }
@@ -60,7 +61,16 @@ class Calculatorbasic(): Calculator_metod {
 
 
 
+    override fun divisionToZero(a: Double, b: Double): String{
+       return if (b == 0.0 || a == 0.0 )  "Делить на ноль нельзя!" else  "${a / b}"
+
+}
+
+
+
+
+
 
 
 }
-const val versionCalculator = "V.0.0.0.8"
+const val versionCalculator = "V.0.0.0.9"

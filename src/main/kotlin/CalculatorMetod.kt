@@ -1,11 +1,10 @@
 package org.example
 
-interface Calculator_metod {
+interface CalculatorMetod {
 
     fun menuCalculator(){}
     fun basicFunctionality(){}
     fun saveToHistory(express: String){}
     fun showHistory(){}
-
-
+    fun divisionToZero(a: Double, b: Double): String
 }
