@@ -50,6 +50,7 @@ class Calculatorbasic(): CalculatorMetod {
                     val inputNumbers1 = readln().toDouble()
                     val inputNumbers2 = readln().toDouble()
                     val resultAnswer4 = divisionToZero(inputNumbers1, inputNumbers2)
+                    saveToHistory("$inputNumbers1 / $inputNumbers2 = $resultAnswer4")
                     "Ответ: $resultAnswer4"}
                 5 -> {
                     showHistory()
