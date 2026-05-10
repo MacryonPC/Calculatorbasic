@@ -1,6 +1,6 @@
 package org.example
 
-interface Calculator_metod {
+interface CalculatorMetod {
 
     fun menuCalculator(){}
     fun basicFunctionality(){}

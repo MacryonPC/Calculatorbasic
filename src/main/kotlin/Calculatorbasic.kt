@@ -1,6 +1,6 @@
 package org.example
 
-class Calculatorbasic(): Calculator_metod {
+class Calculatorbasic(): CalculatorMetod {
 
 
    val checkfalse = false
