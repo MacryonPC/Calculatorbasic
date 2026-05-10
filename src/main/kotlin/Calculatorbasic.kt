@@ -47,13 +47,14 @@ class Calculatorbasic(): CalculatorMetod {
                     "Ответ: $resultAnswer3"}
                 4 -> {
                     println("Введите числа")
-                    val inputNumbers1 = readln().toFloat()
-                    val inputNumbers2 = readln().toFloat()
-                    "Ответ: ${(inputNumbers1 / inputNumbers2)}"}
+                    val inputNumbers1 = readln().toDouble()
+                    val inputNumbers2 = readln().toDouble()
+                    val resultAnswer4 = divisionToZero(inputNumbers1, inputNumbers2)
+                    "Ответ: $resultAnswer4"}
                 5 -> {
                     showHistory()
-                    ""
-                }
+
+                    ""}
                 6 -> {break}
                 else -> {"Не существующие значение" }
             }
@@ -76,6 +77,15 @@ class Calculatorbasic(): CalculatorMetod {
             history.forEach { println(it) }
         }
     }
+
+    override fun divisionToZero(a: Double, b: Double): String{
+       return if (b == 0.0 || a == 0.0 )  "Делить на ноль нельзя!" else  "${a / b}"
+
+}
+
+
+
+
 
 
 
