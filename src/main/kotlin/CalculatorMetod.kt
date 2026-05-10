@@ -6,6 +6,5 @@ interface CalculatorMetod {
     fun basicFunctionality(){}
     fun saveToHistory(express: String){}
     fun showHistory(){}
-
-
+    fun divisionToZero(a: Double, b: Double): String
 }
